@@ -1,10 +1,14 @@
 ---
 galaxy_info:
   author: Dennis Witt
-  description: your role description
+  description: Ansible role to drain a kubernetes node
   namespace: wittdennis
-  role_name: template_role
+  role_name: kubernetes_node_drain
   license: MIT
+  platforms:
+    - name: GenericLinux
+      versions:
+        - all
 
   min_ansible_version: "2.1"
 
