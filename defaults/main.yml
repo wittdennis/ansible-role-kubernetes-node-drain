@@ -1,2 +1,6 @@
 ---
-# defaults file for role_remplate
+kubernetes_node_drain_grace_period: 300
+kubernetes_node_drain_timeout_seconds: 360
+kubernetes_node_drain_retries: 3
+kubernetes_node_drain_delay_seconds: 10
+kubernetes_node_drain_fallback_enabled: false
