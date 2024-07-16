@@ -1,0 +1,8 @@
+repos:
+  - repo: https://github.com/ansible-community/ansible-lint.git
+    rev: v24.2.3
+    hooks:
+      - id: ansible-lint
+        files: ^(?!\.).*\.(yaml|yml)$
+        verbose: true
+        args: ["-p", "./"]
