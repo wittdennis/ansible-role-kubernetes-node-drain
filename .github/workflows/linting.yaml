@@ -9,4 +9,4 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - name: lint
-        uses: ansible/ansible-lint@v24.12.2
+        uses: ansible/ansible-lint@v25.1.0
