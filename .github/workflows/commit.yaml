@@ -4,11 +4,4 @@ on: [push]
 
 jobs:
   conventional-compliance:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@main
-        with:
-          fetch-depth: 0
-
-      - name: Conventional commits check
-        uses: oknozor/cocogitto-action@v3.9
+    uses: wittdennis/pipelines/.github/workflows/cog-validate.yaml@1.5.0

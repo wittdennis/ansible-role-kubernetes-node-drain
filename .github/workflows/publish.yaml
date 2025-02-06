@@ -1,4 +1,4 @@
-name: publish
+name: galaxy-publish
 
 on:
   release:
@@ -6,13 +6,6 @@ on:
 
 jobs:
   publish:
-    runs-on: ubuntu-24.04
-    steps:
-      - name: checkout
-        uses: actions/checkout@v4
-      - name: publish role
-        run: |
-          REPOSITORY_NAME=$(echo ${GITHUB_REPOSITORY} | cut -d '/' -f2)
-          ansible-galaxy role import --token ${ANSIBLE_GALAXY_API_KEY} --branch ${GITHUB_REF_NAME} ${GITHUB_REPOSITORY_OWNER} ${REPOSITORY_NAME}
-        env:
-          ANSIBLE_GALAXY_API_KEY: ${{ secrets.ANSIBLE_GALAXY_API_KEY }}
+    uses: wittdennis/pipelines/.github/workflows/ansible-galaxy-publish.yaml@1.5.0
+    secrets:
+      galaxy-api-token: ${{ secrets.ANSIBLE_GALAXY_API_KEY }}
