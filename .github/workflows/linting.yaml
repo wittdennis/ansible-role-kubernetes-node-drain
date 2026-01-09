@@ -5,4 +5,4 @@ on:
 
 jobs:
   ansible-lint:
-    uses: wittdennis/pipelines/.github/workflows/ansible-lint.yaml@1.13.3
+    uses: wittdennis/pipelines/.github/workflows/ansible-lint.yaml@1.13.4
