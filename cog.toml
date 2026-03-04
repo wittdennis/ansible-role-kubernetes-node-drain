@@ -19,8 +19,8 @@ skip_untracked = false
 [commit_types]
 
 [changelog]
-authors = [] 
-path = "CHANGELOG.md" 
+authors = []
+path = "CHANGELOG.md"
 template = "default" # to change to remote set repository to repository name and uncomment remote and owner
 # repository = "repo-template-ansible-role"
 # remote = "github.com"
@@ -28,4 +28,4 @@ template = "default" # to change to remote set repository to repository name and
 
 [bump_profiles]
 
-[packages]
+[monorepo.packages]
