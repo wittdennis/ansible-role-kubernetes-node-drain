@@ -6,6 +6,6 @@ on:
 
 jobs:
   publish:
-    uses: wittdennis/pipelines/.github/workflows/ansible-galaxy-publish.yaml@c266d3ab242fbabe3bc4d4e3dad0316d4133c988 # 2.0.68
+    uses: wittdennis/pipelines/.github/workflows/ansible-galaxy-publish.yaml@af0b45358e2aa5c4c467a76784edf922dc9b4fd0 # 2.0.69
     secrets:
       galaxy-api-token: ${{ secrets.ANSIBLE_GALAXY_API_KEY }}
