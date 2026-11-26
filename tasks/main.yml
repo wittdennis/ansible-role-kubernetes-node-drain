@@ -6,6 +6,7 @@
         -o jsonpath='{ range .status.conditions[?(@.type == "Ready")].status }{ @ }{ end }'
   register: kubectl_node_ready
   delegate_to: "{{ groups['kubernetes_control_plane'][0] }}"
+  become: true
   failed_when: false
   changed_when: false
 
@@ -15,6 +16,7 @@
       kubectl get node {{ kubernetes_node_name | default(inventory_hostname) }} -o jsonpath='{ .spec.unschedulable }'
   register: kubectl_node_shedulable
   delegate_to: "{{ groups['kubernetes_control_plane'][0] }}"
+  become: true
   failed_when: false
   changed_when: false
 
@@ -24,6 +26,7 @@
 
 - name: Draining
   delegate_to: "{{ groups['kubernetes_control_plane'][0] }}"
+  become: true
   when: needs_cordoning
   block:
     - name: Cordon node
